@@ -13,11 +13,19 @@ const port = 4000
 
 
 // middlewares
-app.use(express.json())
-app.use(cors())
+
+app.use(cors(
+    {
+        origin: [""],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+))
 
 // db connection
-connectDB()
+app.use(express.json())
+
+mongoose.connect('mongodb+srv://frequel45:0123456789@cluster0.mwiak52.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0');
 
 // api endpoints
 app.use("/api/user", userRouter)
