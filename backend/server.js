@@ -16,7 +16,7 @@ const port = 4000
 app.use(express.json())
 app.use(cors(
     {
-        origin: [""],
+        origin: ["https://food-del-api-five.vercel.app"],
         methods: ["POST", "GET"],
         credentials: true
     }
